@@ -55,7 +55,7 @@ export function Footer() {
       </div>
       <div className="border-t border-white/10">
         <div className="mx-auto flex w-full max-w-[1180px] flex-col gap-2 px-5 py-5 text-xs text-ink/50 md:flex-row md:justify-between md:px-8">
-          <p>Slanfor. Digital growth and technology.</p>
+          <p>Slanfor. Digital growth and technology agency.</p>
           <p>Build. Brand. Market. Sell.</p>
         </div>
       </div>
