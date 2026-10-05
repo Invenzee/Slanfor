@@ -39,6 +39,73 @@ select option {
   color: #0b1e3a;
 }
 
+.slanfor-gradient-text {
+  background-size: 220% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: slanfor-gradient-shift linear infinite;
+}
+
+.silk-field {
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(42% 32% at 18% 28%, color-mix(in srgb, var(--silk, #2563eb) 75%, transparent), transparent 70%),
+    radial-gradient(36% 42% at 82% 18%, color-mix(in srgb, var(--silk, #2563eb) 55%, #f8fafc 12%), transparent 72%),
+    radial-gradient(48% 38% at 48% 86%, color-mix(in srgb, var(--silk, #2563eb) 40%, transparent), transparent 70%);
+  background-size: 160% 160%, 140% 140%, 150% 150%;
+  animation: silk-drift 16s ease-in-out infinite alternate;
+}
+
+.specular-face {
+  position: relative;
+  isolation: isolate;
+}
+
+.specular-face::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: radial-gradient(
+    140px circle at var(--shine-x, 50%) var(--shine-y, 0%),
+    var(--shine, #bfdbfe),
+    transparent 42%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+@keyframes slanfor-gradient-shift {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes silk-drift {
+  from {
+    background-position: 0% 20%, 100% 0%, 40% 100%;
+  }
+  to {
+    background-position: 40% 40%, 60% 30%, 70% 60%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slanfor-gradient-text,
+  .silk-field {
+    animation: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
