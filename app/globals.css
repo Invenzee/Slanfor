@@ -34,6 +34,11 @@ body {
   color: #f8fafc;
 }
 
+select option {
+  background-color: #ffffff;
+  color: #0b1e3a;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
