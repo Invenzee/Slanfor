@@ -12,8 +12,9 @@ export function Footer() {
             <p className="font-display text-2xl tracking-tight">Slanfor</p>
           </div>
           <p className="mt-5 max-w-xs text-sm leading-6 text-ink/70">
-            Development, design, video, marketing, and outbound sales. One team,
-            from the first page to the next customer.
+            A digital studio that builds websites and software, designs brands,
+            produces video and copy, runs campaigns, and works the sales list,
+            so the next customer has somewhere to land.
           </p>
         </div>
 
@@ -55,8 +56,8 @@ export function Footer() {
       </div>
       <div className="border-t border-white/10">
         <div className="mx-auto flex w-full max-w-[1180px] flex-col gap-2 px-5 py-5 text-xs text-ink/50 md:flex-row md:justify-between md:px-8">
-          <p>Slanfor. Digital growth and technology agency.</p>
-          <p>Build. Brand. Market. Sell.</p>
+          <p>Slanfor. Digital studio for websites, brands, campaigns, and sales.</p>
+          <p>Development, design, marketing, and sales.</p>
         </div>
       </div>
     </footer>

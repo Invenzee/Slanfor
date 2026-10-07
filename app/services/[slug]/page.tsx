@@ -6,35 +6,8 @@ import { GlarePanel } from "@/components/site/GlarePanel";
 import { Hero } from "@/components/site/Hero";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { SiteButton } from "@/components/site/SiteButton";
-import { serviceNote } from "@/lib/service-notes";
-import { getPillar, pillars, relatedPillars } from "@/lib/services";
-
-const scenes: Record<string, { src: string; alt: string }[]> = {
-  development: [
-    { src: "/about-studio.jpg", alt: "A dim studio desk with monitors glowing blue" },
-    { src: "/vision-sell.jpg", alt: "A quiet desk with a phone and a laptop" },
-  ],
-  design: [
-    { src: "/vision-brand.jpg", alt: "A design desk with colour swatches and a sketchbook" },
-    { src: "/about-studio.jpg", alt: "A dim studio desk with monitors glowing blue" },
-  ],
-  video: [
-    { src: "/vision-market.jpg", alt: "An editing desk with a monitor and headphones" },
-    { src: "/vision-brand.jpg", alt: "A design desk with colour swatches and a sketchbook" },
-  ],
-  marketing: [
-    { src: "/vision-market.jpg", alt: "An editing desk with a monitor and headphones" },
-    { src: "/vision-sell.jpg", alt: "A quiet desk with a phone and a laptop" },
-  ],
-  sales: [
-    { src: "/vision-sell.jpg", alt: "A quiet desk with a phone and a laptop" },
-    { src: "/about-studio.jpg", alt: "A dim studio desk with monitors glowing blue" },
-  ],
-  content: [
-    { src: "/vision-brand.jpg", alt: "A design desk with colour swatches and a sketchbook" },
-    { src: "/vision-market.jpg", alt: "An editing desk with a monitor and headphones" },
-  ],
-};
+import { serviceNoteLines } from "@/lib/service-notes";
+import { getPillar, pillars, relatedPillars, serviceImage } from "@/lib/services";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -57,29 +30,24 @@ export default async function ServicePage({ params }: Props) {
   if (!pillar) notFound();
 
   const related = relatedPillars(pillar.related);
-  const shots = scenes[pillar.slug] ?? scenes.development;
-  const services = pillar.clusters.flatMap((cluster) =>
-    cluster.items.map((item) => ({ cluster: cluster.title, item })),
-  );
+  const services = pillar.clusters.flatMap((cluster) => cluster.items);
 
   return (
     <>
       <Hero
-        eyebrow={`Services / ${pillar.index}`}
         title={pillar.title}
-        accent="Tell us the brief."
         lede={pillar.lede}
         formId={pillar.slug}
         primaryHref="#services"
-        primaryLabel="See the work"
+        primaryLabel="View services"
       />
       <div id="services">
         {services.map((service, index) => {
           const imageFirst = index % 2 === 0;
-          const shot = shots[index % shots.length];
+          const shot = serviceImage(service);
           return (
             <section
-              key={service.item}
+              key={service}
               className="grid min-h-[100vh] w-full lg:grid-cols-2"
             >
               <div className={`relative min-h-[46vh] lg:min-h-[100vh] ${imageFirst ? "" : "lg:order-2"}`}>
@@ -91,11 +59,14 @@ export default async function ServicePage({ params }: Props) {
                 }`}
               >
                 <div className="mx-auto w-full max-w-xl">
-                  <p className="text-xs font-medium uppercase tracking-[0.22em] text-sky">
-                    {String(index + 1).padStart(2, "0")} / {service.cluster}
-                  </p>
-                  <SectionHeading text={service.item} className="mt-3" />
-                  <p className="mt-4 text-base leading-7 text-ink/75">{serviceNote(service.item)}</p>
+                  <SectionHeading text={service} />
+                  <div className="mt-5 space-y-4">
+                    {serviceNoteLines(service).map((line, index) => (
+                      <p key={index} className="text-base leading-7 text-ink/75">
+                        {line}
+                      </p>
+                    ))}
+                  </div>
                   <div className="mt-8">
                     <SiteButton href="/contact">Ask about this</SiteButton>
                   </div>
@@ -113,8 +84,7 @@ export default async function ServicePage({ params }: Props) {
             {related.map((item) => (
               <GlarePanel key={item.slug}>
                 <Link href={`/services/${item.slug}`} className="block p-6">
-                  <p className="text-xs tracking-[0.16em] text-sky">{item.index}</p>
-                  <h3 className="mt-3 font-display text-2xl tracking-tight">{item.title}</h3>
+                  <h3 className="font-display text-2xl tracking-tight">{item.title}</h3>
                   <p className="mt-2 text-sm leading-6 text-ink/70">{item.summary}</p>
                 </Link>
               </GlarePanel>
@@ -125,7 +95,7 @@ export default async function ServicePage({ params }: Props) {
 
       <section className="bg-inkwell">
         <div className="mx-auto flex w-full max-w-[1180px] flex-col items-start justify-between gap-6 px-5 py-16 md:flex-row md:items-end md:px-8">
-          <SectionHeading text="Tell us what to ship." className="max-w-xl" />
+          <SectionHeading text="Request a quote" className="max-w-xl" />
           <SiteButton href="/contact">Get a quote</SiteButton>
         </div>
       </section>

@@ -8,15 +8,18 @@ export function HomeAbout() {
       <div className="mx-auto grid w-full max-w-[1180px] items-center gap-10 px-5 md:px-8 lg:grid-cols-2 lg:gap-14">
         <div>
           <p className="text-xs font-medium uppercase tracking-[0.22em] text-sky">About us</p>
-          <SectionHeading text="One team. Four motions." className="mt-3" />
+          <SectionHeading text="Who we are" className="mt-3" />
           <p className="mt-4 max-w-xl text-base leading-7 text-ink/75">
-            Slanfor combines development, design, video, marketing, and outbound sales
-            under one roof. Build the presence, shape the brand, take it to market, and
-            turn the interest into customers, with one team instead of five suppliers.
+            Most companies do not stall online because they lack ideas. They stall
+            because the website was built by one firm, the brand by another, the ads
+            by a freelancer, and the inbox by nobody. Slanfor exists so those jobs
+            sit in one studio.
           </p>
           <p className="mt-4 max-w-xl text-base leading-7 text-ink/75">
-            The order is simple. Build. Brand. Market. Sell. The site and the identity
-            come first, then the campaigns and the conversations that follow.
+            We design and develop websites and software, shape the identity they
+            live in, produce the video and copy that explain the offer, run search
+            and paid campaigns, and staff outbound sales when traffic alone is not
+            enough. You do not have to project-manage five suppliers.
           </p>
           <div className="mt-7">
             <SiteButton href="/about" variant="ghost">

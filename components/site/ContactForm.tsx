@@ -20,7 +20,7 @@ export function ContactForm({
   if (state.status === "success") {
     return (
       <div className="rounded-xl border border-white/10 bg-panel p-6" role="status">
-        <p className="font-display text-2xl tracking-tight">Message checked.</p>
+        <p className="font-display text-2xl tracking-tight">Enquiry received</p>
         <p className="mt-3 text-sm leading-6 text-ink/75">{state.message}</p>
       </div>
     );
@@ -30,7 +30,7 @@ export function ContactForm({
     <form action={action} className="grid gap-4" noValidate>
       {compact ? null : (
         <p className="text-sm leading-6 text-ink/70">
-          The form checks what you send. It does not email anyone until an inbox is connected.
+          The form checks that the brief is usable. It does not email anyone until an inbox is connected.
         </p>
       )}
       {state.status === "error" ? (
@@ -62,19 +62,18 @@ export function ContactForm({
           className={inputClass}
         />
       </Field>
-      {compact ? null : (
-        <Field error={state.fieldErrors?.phone}>
-          <input
-            id={fieldId("phone")}
-            name="phone"
-            type="tel"
-            autoComplete="tel"
-            placeholder="Phone (optional)"
-            aria-label="Phone, optional"
-            className={inputClass}
-          />
-        </Field>
-      )}
+      <Field error={state.fieldErrors?.phone}>
+        <input
+          id={fieldId("phone")}
+          name="phone"
+          type="tel"
+          autoComplete="tel"
+          required
+          placeholder="Phone"
+          aria-label="Phone"
+          className={inputClass}
+        />
+      </Field>
       <Field error={state.fieldErrors?.service}>
         <select
           id={fieldId("service")}

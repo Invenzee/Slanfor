@@ -9,10 +9,11 @@ export function Pillars() {
     <section className="bg-navy py-20 md:py-28">
       <div className="mx-auto w-full max-w-[1180px] px-5 md:px-8">
         <p className="text-xs font-medium uppercase tracking-[0.22em] text-sky">Services</p>
-        <SectionHeading text="Six practices. One team." className="mt-3" />
-        <p className="mt-2 max-w-2xl text-base leading-7 text-ink/75">
-          Development, design, video, marketing, sales, and content. Related work stays
-          on the same page, so you are not sent through a catalogue of one-line services.
+        <SectionHeading text="Services we provide" className="mt-3" />
+        <p className="mt-3 max-w-2xl text-base leading-7 text-ink/75">
+          Development, design, video, marketing, sales, and content. Each practice is a
+          real desk, not a menu label. Open one and every related service sits on the
+          same page, written out in full, the way a project actually runs.
         </p>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -23,7 +24,7 @@ export function Pillars() {
                 <h3 className="mt-5 font-display text-[1.7rem] leading-none tracking-tight">
                   {pillar.short}
                 </h3>
-                <p className="mt-4 line-clamp-4 text-sm leading-6 text-ink/70">{pillar.detail}</p>
+                <p className="mt-4 text-sm leading-6 text-ink/70">{pillar.detail}</p>
                 <ul className="mt-5 space-y-2">
                   {pillar.preview.map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm text-ink/85">

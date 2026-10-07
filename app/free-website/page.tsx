@@ -10,7 +10,7 @@ import { freeWebsite } from "@/lib/services";
 export const metadata: Metadata = {
   title: "Free website",
   description:
-    "Professional website development for £0. Hosting and website management for £200 a year.",
+    "A standard four-to-five-page business website built at no charge. Hosting, upkeep, and form notifications are £200 a year.",
 };
 
 export default function FreeWebsitePage() {
@@ -18,8 +18,8 @@ export default function FreeWebsitePage() {
     <>
       <PageHero
         eyebrow="Slanfor free website package"
-        title="Professional website development, without the build fee."
-        lede="A standard business website is included. Looking after it, and keeping it hosted, is £200 a year."
+        title="Free website package"
+        lede="If you need a standard four-to-five-page site (home, about, services, and contact), Slanfor designs and builds it at no charge. Hosting, basic upkeep, and an email when someone uses the form are £200 a year, billed once. It is a real website, not a holding page with a logo on it."
       />
       <section className="bg-inkwell py-16 md:py-24">
         <div className="mx-auto w-full max-w-[1180px] px-5 md:px-8">
@@ -31,7 +31,7 @@ export default function FreeWebsitePage() {
                   £<CountUp to={0} from={80} duration={1.2} />
                 </p>
                 <p className="mt-4 max-w-sm text-sm leading-6 text-ink/70">
-                  No build fee for a standard 4–5 page business website.
+                  No build fee for a standard four-to-five-page business website, written and designed around your offer.
                 </p>
               </div>
             </GlarePanel>
@@ -43,13 +43,13 @@ export default function FreeWebsitePage() {
                   <span className="ml-2 align-baseline text-2xl text-ink/70">/year</span>
                 </p>
                 <p className="mt-4 max-w-sm text-sm leading-6 text-ink/70">
-                  Hosting, basic upkeep, and a place for the site to live.
+                  Hosting, certificates, basic maintenance, and a working inbox for the contact form, for the year.
                 </p>
               </div>
             </GlarePanel>
           </div>
 
-          <SectionHeading text="What is included" className="mt-16" />
+          <SectionHeading text="What the package includes" className="mt-16" />
           <ul className="mt-4 grid gap-x-10 sm:grid-cols-2">
             {freeWebsite.includes.map((item) => (
               <li key={item} className="flex items-start gap-3 border-b border-white/10 py-4">

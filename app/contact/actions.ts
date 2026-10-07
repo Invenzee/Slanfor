@@ -24,7 +24,9 @@ export async function submitEnquiry(
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     fieldErrors.email = "Enter a valid email address.";
   }
-  if (phone && !/^[0-9+().\-\s]{7,20}$/.test(phone)) {
+  if (!phone) {
+    fieldErrors.phone = "Please add your phone number.";
+  } else if (!/^[0-9+().\-\s]{7,20}$/.test(phone)) {
     fieldErrors.phone = "That phone number does not look right.";
   }
   if (!service) fieldErrors.service = "Choose what you need help with.";
@@ -44,6 +46,6 @@ export async function submitEnquiry(
   return {
     status: "success",
     message:
-      "The form is valid. Email delivery is not connected yet, so this message has not been sent.",
+      "The brief is complete enough to send. Email delivery is not connected yet, so this message has not reached an inbox.",
   };
 }

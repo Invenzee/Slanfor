@@ -9,10 +9,9 @@ export default function Home() {
   return (
     <>
       <Hero
-        eyebrow="Digital growth and technology"
-        title="Build your brand."
-        accent="Grow your business."
-        lede="Slanfor helps businesses build their digital presence, create strong brands, generate qualified leads, and turn opportunities into customers."
+        eyebrow="Slanfor"
+        title="Websites, brands, and growth for your business"
+        lede="Slanfor designs, builds, and markets the digital side of a company, then staffs the outreach that turns interest into meetings. You brief once. The site, the brand, the films, the campaigns, and the follow-up stay in the same hands."
         formId="hero"
       />
       <HomeAbout />

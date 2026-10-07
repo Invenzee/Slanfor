@@ -1,8 +1,8 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import GradientText from "@/components/react-bits/GradientText";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
+import { headingClass } from "./SectionHeading";
 
 const Silk = dynamic(() => import("@/components/react-bits/Silk"), { ssr: false });
 
@@ -26,17 +26,10 @@ export function PageHero({
       ) : null}
       <div className="relative mx-auto flex w-full max-w-[860px] flex-col items-center px-5 py-28 text-center md:px-8">
         <p className="text-xs font-medium uppercase tracking-[0.22em] text-sky">{eyebrow}</p>
-        <h1 className="mt-5">
-          <GradientText
-            as="span"
-            className="w-full justify-center text-center font-display text-[clamp(2.5rem,4.6vw,4rem)] leading-[1.05] tracking-[-0.04em]"
-            colors={["#3bb2f6", "#f8fafc", "#2563eb"]}
-            animationSpeed={8}
-          >
-            {title}
-          </GradientText>
+        <h1 className={`mt-5 ${headingClass}`}>
+          {title}
         </h1>
-        <p className="mt-6 max-w-xl text-base leading-7 text-ink/75">{lede}</p>
+        <p className="mt-6 max-w-2xl text-base leading-7 text-ink/75">{lede}</p>
       </div>
     </section>
   );

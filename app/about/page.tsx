@@ -8,7 +8,7 @@ import { focusChapters } from "@/lib/services";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Slanfor combines development, design, video, marketing, and outbound sales under one roof.",
+    "Slanfor is a digital studio that holds the brief from the first page to the follow-up call: websites, brands, films, campaigns, and outbound sales.",
 };
 
 export default function AboutPage() {
@@ -16,8 +16,8 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About Slanfor"
-        title="One team for the site, the brand, and the next customer."
-        lede="We help businesses build their digital presence, create strong brands, generate qualified leads, and turn opportunities into customers."
+        title="About our studio"
+        lede="We are a studio for businesses that need a website that works, a brand people recognise, films and copy that explain the offer, campaigns that bring people in, and someone to work the list when traffic is not enough. The same team holds the brief from the first page to the follow-up call."
       />
       {focusChapters.map((chapter, index) => {
         const imageFirst = index % 2 === 0;
@@ -37,11 +37,17 @@ export default function AboutPage() {
               </div>
               <div className={imageFirst ? "" : "lg:order-1"}>
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-sky">
-                  {chapter.index} / Vision
+                  {chapter.index} / How we work
                 </p>
                 <SectionHeading text={chapter.word} className="mt-3" />
                 <p className="mt-4 text-base leading-7 text-ink/80">{chapter.text}</p>
-                <p className="mt-4 text-base leading-7 text-ink/70">{chapter.body}</p>
+                <div className="mt-4 space-y-4">
+                  {chapter.body.split(/(?<=[.!?])\s+/).map((line, lineIndex) => (
+                    <p key={lineIndex} className="text-base leading-7 text-ink/70">
+                      {line}
+                    </p>
+                  ))}
+                </div>
                 <div className="mt-7 flex flex-wrap gap-3">
                   <SiteButton href={chapter.href}>{chapter.label}</SiteButton>
                   {chapter.also?.map((item) => (

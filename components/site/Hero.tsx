@@ -1,15 +1,12 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import GradientText from "@/components/react-bits/GradientText";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { ContactForm } from "./ContactForm";
+import { headingClass } from "./SectionHeading";
 import { SiteButton } from "./SiteButton";
 
 const Silk = dynamic(() => import("@/components/react-bits/Silk"), { ssr: false });
-
-const heading =
-  "font-display text-[clamp(2.5rem,4.6vw,4rem)] leading-[1.05] tracking-[-0.04em]";
 
 export function Hero({
   eyebrow,
@@ -20,9 +17,9 @@ export function Hero({
   primaryHref = "/services",
   primaryLabel = "View services",
 }: {
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
-  accent: string;
+  accent?: string;
   lede: string;
   formId: string;
   primaryHref?: string;
@@ -39,26 +36,14 @@ export function Hero({
       ) : null}
       <div className="relative mx-auto grid w-full max-w-[1180px] items-center gap-10 px-5 pt-28 pb-16 md:px-8 md:pt-32 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:gap-12 lg:pb-20">
         <div>
-          <p className="text-xs font-medium uppercase tracking-[0.22em] text-sky">{eyebrow}</p>
-          <h1 className="mt-4 flex flex-col items-start text-ink">
-            <GradientText
-              as="span"
-              className={heading}
-              colors={["#3bb2f6", "#f8fafc", "#2563eb"]}
-              animationSpeed={8}
-            >
-              {title}
-            </GradientText>
-            <GradientText
-              as="span"
-              className={`mt-1 ${heading}`}
-              colors={["#f8fafc", "#3bb2f6", "#2563eb"]}
-              animationSpeed={8}
-            >
-              {accent}
-            </GradientText>
+          {eyebrow ? (
+            <p className="text-xs font-medium uppercase tracking-[0.22em] text-sky">{eyebrow}</p>
+          ) : null}
+          <h1 className={`flex flex-col items-start ${eyebrow ? "mt-4" : ""}`}>
+            <span className={headingClass}>{title}</span>
+            {accent ? <span className={`mt-1 ${headingClass}`}>{accent}</span> : null}
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-7 text-ink/78">{lede}</p>
+          <p className="mt-6 max-w-2xl text-base leading-7 text-ink/78">{lede}</p>
           <div className="mt-7 flex flex-wrap gap-3">
             <SiteButton href={primaryHref}>{primaryLabel}</SiteButton>
             <SiteButton href="/free-website" variant="ghost">
@@ -69,9 +54,9 @@ export function Hero({
 
         <div>
           <div className="rounded-xl border border-white/10 bg-[#0c2038]/85 p-5 backdrop-blur md:p-6">
-            <p className="font-display text-xl tracking-tight">Tell us about the work</p>
+            <p className="font-display text-xl tracking-tight">Send an enquiry</p>
             <p className="mt-1 mb-4 text-sm text-ink/65">
-              A short brief is enough. Email delivery is not connected yet.
+              A few lines on what you need is enough. We will come back with questions, not a generic pitch.
             </p>
             <ContactForm idPrefix={formId} compact />
           </div>

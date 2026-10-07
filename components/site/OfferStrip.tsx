@@ -11,8 +11,13 @@ export function OfferStrip() {
       <div className="mx-auto w-full max-w-[1180px] px-5 md:px-8">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-xl">
-            <p className="text-xs font-medium uppercase tracking-[0.22em] text-sky">Pricing</p>
-            <SectionHeading text="No build fee." className="mt-3" />
+            <p className="text-xs font-medium uppercase tracking-[0.22em] text-sky">Offer</p>
+            <SectionHeading text="Free website package" className="mt-3" />
+            <p className="mt-3 max-w-xl text-base leading-7 text-ink/70">
+              A standard business website is included. Hosting and looking after it is
+              £200 a year. Shops, booking systems, and custom software are quoted on
+              their own.
+            </p>
           </div>
           <SiteButton href="/free-website" variant="line">
             See what is included

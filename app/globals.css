@@ -2,7 +2,7 @@
 
 @theme inline {
   --font-sans: var(--font-inter);
-  --font-display: var(--font-manrope);
+  --font-display: var(--font-cabinet);
   --color-navy: #0b1e3a;
   --color-inkwell: #071422;
   --color-panel: #10243f;
@@ -10,6 +10,10 @@
   --color-sky: #3bb2f6;
   --color-ink: #f8fafc;
   --color-line: rgba(248, 250, 252, 0.12);
+}
+
+.font-display {
+  font-weight: 600;
 }
 
 html {
@@ -37,14 +41,6 @@ body {
 select option {
   background-color: #ffffff;
   color: #0b1e3a;
-}
-
-.slanfor-gradient-text {
-  background-size: 220% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: slanfor-gradient-shift linear infinite;
 }
 
 .silk-field {
@@ -81,15 +77,6 @@ select option {
   pointer-events: none;
 }
 
-@keyframes slanfor-gradient-shift {
-  from {
-    background-position: 0% 50%;
-  }
-  to {
-    background-position: 100% 50%;
-  }
-}
-
 @keyframes silk-drift {
   from {
     background-position: 0% 20%, 100% 0%, 40% 100%;
@@ -100,7 +87,6 @@ select option {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .slanfor-gradient-text,
   .silk-field {
     animation: none;
   }

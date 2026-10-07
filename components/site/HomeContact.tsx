@@ -8,10 +8,15 @@ export function HomeContact() {
       <div className="mx-auto grid w-full max-w-[1180px] items-start gap-12 px-5 md:px-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
         <div>
           <p className="text-xs font-medium uppercase tracking-[0.22em] text-sky">Contact</p>
-          <SectionHeading text="Send a brief." className="mt-3" />
-          <p className="mt-2 max-w-md text-base leading-7 text-ink/75">
-            Tell us what you want built, branded, marketed, or sold. The details below
-            are placeholders until a phone number and inbox are added.
+          <SectionHeading text="Get in touch" className="mt-3" />
+          <p className="mt-4 max-w-md text-base leading-7 text-ink/75">
+            Tell us what needs building, rewriting, filming, advertising, or
+            selling. Name the company, the problem, and the deadline if there is
+            one. We do not need a polished deck to start a conversation.
+          </p>
+          <p className="mt-4 max-w-md text-base leading-7 text-ink/65">
+            Email and phone below are still placeholders until an inbox is
+            connected. The form checks what you send in the meantime.
           </p>
           <dl className="mt-8 space-y-5 text-sm">
             <div>
