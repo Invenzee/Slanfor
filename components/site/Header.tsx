@@ -37,9 +37,8 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-16 w-full max-w-[1180px] items-center justify-between px-5 md:h-[4.5rem] md:px-8">
-        <Link href="/" className="flex items-center gap-3" aria-label="Slanfor, home">
+        <Link href="/" className="flex items-center" aria-label="Slanfor, home">
           <LogoMark />
-          <span className="font-display text-lg tracking-tight">Slanfor</span>
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
