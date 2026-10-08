@@ -7,9 +7,8 @@ export function Footer() {
     <footer className="border-t border-white/10 bg-navy">
       <div className="mx-auto grid w-full max-w-[1180px] gap-12 px-5 py-16 md:px-8 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center">
             <LogoMark size="lg" />
-            <p className="font-display text-2xl tracking-tight">Slanfor</p>
           </div>
           <p className="mt-5 max-w-xs text-sm leading-6 text-ink/70">
             A digital studio that builds websites and software, designs brands,
