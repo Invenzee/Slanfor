@@ -1,8 +1,8 @@
 import Image from "next/image";
 
 const sizes = {
-  sm: { className: "h-9 w-auto", width: 139, height: 36 },
-  lg: { className: "h-12 w-auto", width: 185, height: 48 },
+  sm: { className: "h-11 w-auto", width: 135, height: 44 },
+  lg: { className: "h-14 w-auto", width: 172, height: 56 },
 };
 
 export function LogoMark({ size = "sm" }: { size?: "sm" | "lg" }) {
