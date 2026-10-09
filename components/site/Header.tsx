@@ -71,8 +71,7 @@ export function Header() {
                             className="block p-5"
                             onClick={() => setServicesOpen(false)}
                           >
-                            <span className="text-xs tracking-[0.16em] text-sky">{pillar.index}</span>
-                            <span className="mt-2 block font-display text-xl tracking-tight">{pillar.short}</span>
+                            <span className="block font-display text-xl tracking-tight">{pillar.short}</span>
                             <span className="mt-2 block text-sm leading-6 text-ink/70">{pillar.summary}</span>
                           </Link>
                         </GlarePanel>
