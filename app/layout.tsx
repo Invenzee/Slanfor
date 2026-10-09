@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { Inter } from "next/font/google";
+import { Inter, Unbounded } from "next/font/google";
+import { EnquiryPopupProvider } from "@/components/site/EnquiryPopup";
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
 import "./globals.css";
 
-const cabinet = localFont({
-  src: "../public/fonts/CabinetGrotesk-Variable.woff2",
-  variable: "--font-cabinet",
+const unbounded = Unbounded({
+  subsets: ["latin"],
+  variable: "--font-unbounded",
   display: "swap",
-  weight: "100 900",
 });
 
 const inter = Inter({
@@ -29,17 +28,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en-GB" className={`${cabinet.variable} ${inter.variable} h-full`}>
+    <html lang="en-GB" className={`${unbounded.variable} ${inter.variable} h-full`}>
       <body className="min-h-full bg-inkwell font-sans text-ink antialiased">
-        <a
-          href="#content"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-xl focus:bg-panel focus:px-3 focus:py-2"
-        >
-          Skip to content
-        </a>
-        <Header />
-        <main id="content">{children}</main>
-        <Footer />
+        <EnquiryPopupProvider>
+          <a
+            href="#content"
+            className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-xl focus:bg-panel focus:px-3 focus:py-2"
+          >
+            Skip to content
+          </a>
+          <Header />
+          <main id="content">{children}</main>
+          <Footer />
+        </EnquiryPopupProvider>
       </body>
     </html>
   );

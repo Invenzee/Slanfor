@@ -23,15 +23,25 @@ const tones = {
 
 export function SiteButton({
   href,
+  onClick,
   children,
   variant = "blue",
 }: {
-  href: string;
+  href?: string;
+  onClick?: () => void;
   children: React.ReactNode;
   variant?: keyof typeof tones;
 }) {
   return (
-    <SpecularButton href={href} size="md" radius={12} textColor="#f8fafc" followMouse {...tones[variant]}>
+    <SpecularButton
+      href={href}
+      onClick={onClick}
+      size="md"
+      radius={12}
+      textColor="#f8fafc"
+      followMouse
+      {...tones[variant]}
+    >
       {children}
     </SpecularButton>
   );

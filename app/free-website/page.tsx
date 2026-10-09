@@ -4,7 +4,7 @@ import CountUp from "@/components/react-bits/CountUp";
 import { GlarePanel } from "@/components/site/GlarePanel";
 import { PageHero } from "@/components/site/PageHero";
 import { SectionHeading } from "@/components/site/SectionHeading";
-import { SiteButton } from "@/components/site/SiteButton";
+import { QuoteButton } from "@/components/site/EnquiryPopup";
 import { freeWebsite } from "@/lib/services";
 
 export const metadata: Metadata = {
@@ -65,7 +65,7 @@ export default function FreeWebsitePage() {
           </aside>
 
           <div className="mt-12">
-            <SiteButton href="/contact">Ask about the package</SiteButton>
+            <QuoteButton>Ask about the package</QuoteButton>
           </div>
         </div>
       </section>

@@ -1,5 +1,5 @@
+import { QuoteButton } from "./EnquiryPopup";
 import { SectionHeading } from "./SectionHeading";
-import { SiteButton } from "./SiteButton";
 
 export function HomeCta() {
   return (
@@ -14,7 +14,7 @@ export function HomeCta() {
             would look like.
           </p>
         </div>
-        <SiteButton href="/contact">Get a quote</SiteButton>
+        <QuoteButton />
       </div>
     </section>
   );

@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { GlarePanel } from "@/components/site/GlarePanel";
 import { Hero } from "@/components/site/Hero";
 import { SectionHeading } from "@/components/site/SectionHeading";
-import { SiteButton } from "@/components/site/SiteButton";
+import { QuoteButton } from "@/components/site/EnquiryPopup";
 import { serviceNoteLines } from "@/lib/service-notes";
 import { getPillar, pillars, relatedPillars, serviceImage } from "@/lib/services";
 
@@ -68,7 +68,7 @@ export default async function ServicePage({ params }: Props) {
                     ))}
                   </div>
                   <div className="mt-8">
-                    <SiteButton href="/contact">Ask about this</SiteButton>
+                    <QuoteButton>Ask about this</QuoteButton>
                   </div>
                 </div>
               </div>
@@ -96,7 +96,7 @@ export default async function ServicePage({ params }: Props) {
       <section className="bg-inkwell">
         <div className="mx-auto flex w-full max-w-[1180px] flex-col items-start justify-between gap-6 px-5 py-16 md:flex-row md:items-end md:px-8">
           <SectionHeading text="Request a quote" className="max-w-xl" />
-          <SiteButton href="/contact">Get a quote</SiteButton>
+          <QuoteButton />
         </div>
       </section>
     </>

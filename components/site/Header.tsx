@@ -6,8 +6,8 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { useState, useSyncExternalStore } from "react";
 import { navLinks, pillars } from "@/lib/services";
 import { GlarePanel } from "./GlarePanel";
+import { QuoteButton } from "./EnquiryPopup";
 import { LogoMark } from "./LogoMark";
-import { SiteButton } from "./SiteButton";
 
 function isCurrent(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
@@ -97,7 +97,7 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <SiteButton href="/contact">Get a quote</SiteButton>
+          <QuoteButton />
         </div>
 
         <button
@@ -136,7 +136,7 @@ export function Header() {
               </div>
             ))}
             <div className="mt-4">
-              <SiteButton href="/contact">Get a quote</SiteButton>
+              <QuoteButton onClick={() => setMenuPath(null)} />
             </div>
           </nav>
         </div>
