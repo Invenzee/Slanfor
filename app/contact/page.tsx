@@ -36,8 +36,7 @@ export default function ContactPage() {
               </div>
             </dl>
             <p className="mt-8 max-w-sm text-sm leading-6 text-ink/55">
-              Phone and email here are placeholders until they are added. Use the form
-              for now; it stores the brief on this side until an inbox is connected.
+              Email info@slanfor.com, or use the form. Phone is still to be added.
             </p>
           </aside>
           <div className="rounded-xl border border-white/10 bg-panel p-5 md:p-6">

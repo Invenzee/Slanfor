@@ -40,10 +40,12 @@ export function EnquiryPopupProvider({ children }: { children: ReactNode }) {
   const close = useCallback(() => setIsOpen(false), []);
 
   useEffect(() => {
-    if (pathname === "/contact") return;
-    const seenKey = `${SEEN_KEY}:${pathname}`;
+    if (pathname !== "/") {
+      setIsOpen(false);
+      return;
+    }
     try {
-      if (sessionStorage.getItem(seenKey) === "1") return;
+      if (sessionStorage.getItem(SEEN_KEY) === "1") return;
     } catch {
       return;
     }
@@ -51,7 +53,7 @@ export function EnquiryPopupProvider({ children }: { children: ReactNode }) {
     const timer = window.setTimeout(() => {
       setIsOpen(true);
       try {
-        sessionStorage.setItem(seenKey, "1");
+        sessionStorage.setItem(SEEN_KEY, "1");
       } catch {
         /* ignore quota / private mode */
       }
@@ -63,7 +65,7 @@ export function EnquiryPopupProvider({ children }: { children: ReactNode }) {
   return (
     <EnquiryPopupContext.Provider value={{ open, close }}>
       {children}
-      <EnquiryDialog open={isOpen} onClose={close} />
+      {pathname === "/" ? <EnquiryDialog open={isOpen} onClose={close} /> : null}
     </EnquiryPopupContext.Provider>
   );
 }
@@ -77,7 +79,17 @@ export function QuoteButton({
   variant?: "blue" | "ghost" | "line";
   onClick?: () => void;
 }) {
+  const pathname = usePathname();
   const { open } = useEnquiryPopup();
+
+  if (pathname !== "/") {
+    return (
+      <SiteButton href="/contact" variant={variant} onClick={onClick}>
+        {children}
+      </SiteButton>
+    );
+  }
+
   return (
     <SiteButton
       variant={variant}

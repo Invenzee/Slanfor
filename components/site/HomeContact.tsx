@@ -15,8 +15,7 @@ export function HomeContact() {
             one. We do not need a polished deck to start a conversation.
           </p>
           <p className="mt-4 max-w-md text-base leading-7 text-ink/65">
-            Email and phone below are still placeholders until an inbox is
-            connected. The form checks what you send in the meantime.
+            Write to info@slanfor.com, or use the form. Phone is still to be added.
           </p>
           <dl className="mt-8 space-y-5 text-sm">
             <div>

@@ -36,9 +36,9 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-16 w-full max-w-[1180px] items-center justify-between px-5 md:h-[4.5rem] md:px-8">
+      <div className="mx-auto flex h-[4.5rem] w-full max-w-[1180px] items-center justify-between px-5 md:px-8">
         <Link href="/" className="flex items-center" aria-label="Slanfor, home">
-          <LogoMark />
+          <LogoMark size="lg" />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
@@ -46,7 +46,7 @@ export function Header() {
             link.href === "/services" ? (
               <div
                 key={link.href}
-                className="flex h-16 items-center self-stretch md:h-[4.5rem]"
+                className="flex h-[4.5rem] items-center self-stretch"
                 onMouseEnter={() => setServicesOpen(true)}
                 onMouseLeave={() => setServicesOpen(false)}
               >
@@ -71,8 +71,7 @@ export function Header() {
                             className="block p-5"
                             onClick={() => setServicesOpen(false)}
                           >
-                            <span className="text-xs tracking-[0.16em] text-sky">{pillar.index}</span>
-                            <span className="mt-2 block font-display text-xl tracking-tight">{pillar.short}</span>
+                            <span className="block font-display text-xl tracking-tight">{pillar.short}</span>
                             <span className="mt-2 block text-sm leading-6 text-ink/70">{pillar.summary}</span>
                           </Link>
                         </GlarePanel>
