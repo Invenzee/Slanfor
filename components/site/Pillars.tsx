@@ -21,7 +21,7 @@ export function Pillars() {
             <GlarePanel key={pillar.slug}>
               <div className="flex h-full flex-col p-7">
                 <span className="text-xs tracking-[0.18em] text-sky">{pillar.index}</span>
-                <h3 className="mt-5 font-display text-[1.7rem] leading-none tracking-tight">
+                <h3 className="mt-5 font-display text-[calc(1.7rem-6px)] leading-none tracking-tight">
                   {pillar.short}
                 </h3>
                 <p className="mt-4 text-sm leading-6 text-ink/70">{pillar.detail}</p>

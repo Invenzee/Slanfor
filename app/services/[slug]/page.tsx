@@ -84,7 +84,7 @@ export default async function ServicePage({ params }: Props) {
             {related.map((item) => (
               <GlarePanel key={item.slug}>
                 <Link href={`/services/${item.slug}`} className="block p-6">
-                  <h3 className="font-display text-2xl tracking-tight">{item.title}</h3>
+                  <h3 className="font-display text-[calc(1.5rem-6px)] tracking-tight">{item.title}</h3>
                   <p className="mt-2 text-sm leading-6 text-ink/70">{item.summary}</p>
                 </Link>
               </GlarePanel>

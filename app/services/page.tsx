@@ -26,7 +26,7 @@ export default function ServicesPage() {
           {pillars.map((pillar) => (
             <GlarePanel key={pillar.slug}>
               <Link href={`/services/${pillar.slug}`} className="flex h-full flex-col p-7">
-                <h2 className="font-display text-3xl tracking-tight">{pillar.short}</h2>
+                <h2 className="font-display text-[calc(1.875rem-6px)] tracking-tight">{pillar.short}</h2>
                 <span className="mt-3 flex-1 text-sm leading-6 text-ink/70">{pillar.summary}</span>
                 <span className="mt-6 inline-flex items-center gap-2 text-sm text-sky">
                   Open
