@@ -65,7 +65,7 @@ export function EnquiryPopupProvider({ children }: { children: ReactNode }) {
   return (
     <EnquiryPopupContext.Provider value={{ open, close }}>
       {children}
-      <EnquiryDialog open={isOpen} onClose={close} />
+      {pathname === "/" ? <EnquiryDialog open={isOpen} onClose={close} /> : null}
     </EnquiryPopupContext.Provider>
   );
 }
@@ -79,7 +79,17 @@ export function QuoteButton({
   variant?: "blue" | "ghost" | "line";
   onClick?: () => void;
 }) {
+  const pathname = usePathname();
   const { open } = useEnquiryPopup();
+
+  if (pathname !== "/") {
+    return (
+      <SiteButton href="/contact" variant={variant} onClick={onClick}>
+        {children}
+      </SiteButton>
+    );
+  }
+
   return (
     <SiteButton
       variant={variant}
