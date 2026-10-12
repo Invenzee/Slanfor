@@ -46,11 +46,14 @@ export function Footer() {
         <div className="lg:col-span-3">
           <p className="text-xs uppercase tracking-[0.18em] text-ink/45">Contact</p>
           <ul className="mt-4 space-y-2 text-sm text-ink/70">
-            <li>{contactDetails.email}</li>
+            <li>
+              <a href={`mailto:${contactDetails.email}`} className="hover:text-sky">
+                {contactDetails.email}
+              </a>
+            </li>
             <li>{contactDetails.phone}</li>
             <li>{contactDetails.socials.join(" · ")}</li>
           </ul>
-          <p className="mt-3 text-xs uppercase tracking-[0.16em] text-ink/40">Placeholders</p>
         </div>
       </div>
       <div className="border-t border-white/10">

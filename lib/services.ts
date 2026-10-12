@@ -450,7 +450,7 @@ export const freeWebsite = {
 };
 
 export const contactDetails = {
-  email: "Email address to be added",
+  email: "info@slanfor.com",
   phone: "Phone number to be added",
   socials: ["LinkedIn", "Instagram", "YouTube"],
 };
