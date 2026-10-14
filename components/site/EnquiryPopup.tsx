@@ -71,7 +71,7 @@ export function EnquiryPopupProvider({ children }: { children: ReactNode }) {
 }
 
 export function QuoteButton({
-  children = "Get a quote",
+  children = "Claim your free website",
   variant = "blue",
   onClick,
 }: {
@@ -84,7 +84,7 @@ export function QuoteButton({
 
   if (pathname !== "/") {
     return (
-      <SiteButton href="/contact" variant={variant} onClick={onClick}>
+      <SiteButton href="/free-website" variant={variant} onClick={onClick}>
         {children}
       </SiteButton>
     );
@@ -147,10 +147,10 @@ function EnquiryDialog({ open, onClose }: { open: boolean; onClose: () => void }
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.22em] text-sky">Enquiry</p>
             <h2 id={titleId} className="mt-2 font-display text-2xl tracking-tight">
-              Get a quote
+              Claim your free website
             </h2>
             <p className="mt-2 text-sm leading-6 text-ink/70">
-              A few lines on what you need is enough. We will come back with questions, not a generic pitch.
+              Tell us the company and what the site needs to do. We will say if the free package fits, or what a first piece of paid work would look like.
             </p>
           </div>
           <button

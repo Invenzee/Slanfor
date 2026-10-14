@@ -1,5 +1,7 @@
 "use server";
 
+import { sendEnquiryMail } from "@/lib/mail";
+
 export type EnquiryState = {
   status: "idle" | "success" | "error";
   message: string;
@@ -30,7 +32,7 @@ export async function submitEnquiry(
     fieldErrors.phone = "That phone number does not look right.";
   }
   if (!service) fieldErrors.service = "Choose what you need help with.";
-  if (message.length < 12) {
+  if (message.length < 4) {
     fieldErrors.message = "Tell us a little more about the work.";
   }
 
@@ -42,10 +44,17 @@ export async function submitEnquiry(
     };
   }
 
-  // Connect an email provider here before this enquiry can reach an inbox.
+  try {
+    await sendEnquiryMail({ name, email, phone, service, message });
+  } catch {
+    return {
+      status: "error",
+      message: "The form is fine, but the message did not reach the inbox. Try again in a moment, or write to info@slanfor.com.",
+    };
+  }
+
   return {
     status: "success",
-    message:
-      "The brief is complete enough to send. Email delivery is not connected yet, so this message has not reached an inbox.",
+    message: "Thanks. We have the brief and will come back to you at the email you gave.",
   };
 }

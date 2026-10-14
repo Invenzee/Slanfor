@@ -65,7 +65,7 @@ export default function FreeWebsitePage() {
           </aside>
 
           <div className="mt-12">
-            <QuoteButton>Ask about the package</QuoteButton>
+            <QuoteButton />
           </div>
         </div>
       </section>

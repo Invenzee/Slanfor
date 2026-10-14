@@ -68,7 +68,7 @@ export default async function ServicePage({ params }: Props) {
                     ))}
                   </div>
                   <div className="mt-8">
-                    <QuoteButton>Ask about this</QuoteButton>
+                    <QuoteButton />
                   </div>
                 </div>
               </div>

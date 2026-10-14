@@ -30,7 +30,7 @@ export function ContactForm({
     <form action={action} className="grid gap-4" noValidate>
       {compact ? null : (
         <p className="text-sm leading-6 text-ink/70">
-          The form checks that the brief is usable. It does not email anyone until an inbox is connected.
+          Send a short brief. It goes to info@slanfor.com.
         </p>
       )}
       {state.status === "error" ? (
