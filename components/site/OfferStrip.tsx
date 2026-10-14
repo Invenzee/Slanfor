@@ -38,7 +38,7 @@ export function OfferStrip() {
               <p className="text-sm text-ink/65">Hosting and website management</p>
               <p className="mt-4 font-display text-6xl tracking-tight md:text-7xl">
                 £<CountUp to={200} duration={1.2} />
-                <span className="ml-2 text-2xl text-ink/70">/year</span>
+                <span className="ml-2 text-2xl text-ink/70">/ annually</span>
               </p>
             </div>
           </GlarePanel>
