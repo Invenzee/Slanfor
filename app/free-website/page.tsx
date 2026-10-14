@@ -40,7 +40,7 @@ export default function FreeWebsitePage() {
                 <p className="text-sm text-ink/65">Hosting and website management</p>
                 <p className="mt-5 font-display text-7xl tracking-tight">
                   £<CountUp to={200} duration={1.2} />
-                  <span className="ml-2 align-baseline text-2xl text-ink/70">/year</span>
+                  <span className="ml-2 align-baseline text-2xl text-ink/70">/ annually</span>
                 </p>
                 <p className="mt-4 max-w-sm text-sm leading-6 text-ink/70">
                   Hosting, certificates, basic maintenance, and a working inbox for the contact form, for the year.
