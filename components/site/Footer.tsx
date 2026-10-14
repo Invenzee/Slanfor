@@ -59,7 +59,14 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex w-full max-w-[1180px] flex-col gap-2 px-5 py-5 text-xs text-ink/50 md:flex-row md:justify-between md:px-8">
           <p>Slanfor. Digital studio for websites, brands, campaigns, and sales.</p>
-          <p>Development, design, marketing, and sales.</p>
+          <nav className="flex flex-wrap gap-x-4 gap-y-1" aria-label="Legal">
+            <Link href="/privacy" className="hover:text-sky">
+              Privacy policy
+            </Link>
+            <Link href="/terms" className="hover:text-sky">
+              Terms and conditions
+            </Link>
+          </nav>
         </div>
       </div>
     </footer>
