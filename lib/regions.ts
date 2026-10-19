@@ -13,27 +13,6 @@ export const regions = [
     symbol: "$",
     hosting: 250,
   },
-  {
-    id: "eu",
-    name: "Europe",
-    short: "Europe (€)",
-    symbol: "€",
-    hosting: 230,
-  },
-  {
-    id: "ae",
-    name: "United Arab Emirates",
-    short: "UAE (AED)",
-    symbol: "AED",
-    hosting: 950,
-  },
-  {
-    id: "pk",
-    name: "Pakistan",
-    short: "Pakistan (Rs)",
-    symbol: "Rs",
-    hosting: 75000,
-  },
 ] as const;
 
 export type RegionId = (typeof regions)[number]["id"];
