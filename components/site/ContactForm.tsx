@@ -3,7 +3,7 @@
 import { useActionState } from "react";
 import SpecularButton from "@/components/react-bits/SpecularButton";
 import { submitEnquiry, type EnquiryState } from "@/app/contact/actions";
-import { pillars } from "@/lib/services";
+import { contactDetails, pillars } from "@/lib/services";
 
 const initial: EnquiryState = { status: "idle", message: "" };
 
@@ -30,7 +30,15 @@ export function ContactForm({
     <form action={action} className="grid gap-4" noValidate>
       {compact ? null : (
         <p className="text-sm leading-6 text-ink/70">
-          Send a short brief. It goes to info@slanfor.com.
+          Send a short brief. It goes to{" "}
+          <a href={`mailto:${contactDetails.email}`} className="hover:text-sky">
+            {contactDetails.email}
+          </a>
+          . You can also call{" "}
+          <a href={`tel:${contactDetails.phoneTel}`} className="hover:text-sky">
+            {contactDetails.phone}
+          </a>
+          .
         </p>
       )}
       {state.status === "error" ? (

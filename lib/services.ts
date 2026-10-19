@@ -451,7 +451,8 @@ export const freeWebsite = {
 
 export const contactDetails = {
   email: "info@slanfor.com",
-  phone: "Phone number to be added",
+  phone: "+44 33148312",
+  phoneTel: "+4433148312",
   socials: ["LinkedIn", "Instagram", "YouTube"],
 };
 

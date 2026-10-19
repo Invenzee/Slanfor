@@ -51,7 +51,11 @@ export function Footer() {
                 {contactDetails.email}
               </a>
             </li>
-            <li>{contactDetails.phone}</li>
+            <li>
+              <a href={`tel:${contactDetails.phoneTel}`} className="hover:text-sky">
+                {contactDetails.phone}
+              </a>
+            </li>
             <li>{contactDetails.socials.join(" · ")}</li>
           </ul>
         </div>

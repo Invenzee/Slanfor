@@ -12,6 +12,7 @@ import {
   type ReactNode,
 } from "react";
 import { usePathname } from "next/navigation";
+import { contactDetails } from "@/lib/services";
 import { ContactForm } from "./ContactForm";
 import { SiteButton } from "./SiteButton";
 
@@ -150,7 +151,15 @@ function EnquiryDialog({ open, onClose }: { open: boolean; onClose: () => void }
               Claim your free website
             </h2>
             <p className="mt-2 text-sm leading-6 text-ink/70">
-              Tell us the company and what the site needs to do. We will say if the free package fits, or what a first piece of paid work would look like.
+              Tell us the company and what the site needs to do. We will say if the free package fits, or what a first piece of paid work would look like. You can also write to{" "}
+              <a href={`mailto:${contactDetails.email}`} className="hover:text-sky">
+                {contactDetails.email}
+              </a>{" "}
+              or call{" "}
+              <a href={`tel:${contactDetails.phoneTel}`} className="hover:text-sky">
+                {contactDetails.phone}
+              </a>
+              .
             </p>
           </div>
           <button

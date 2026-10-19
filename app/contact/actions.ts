@@ -1,6 +1,7 @@
 "use server";
 
 import { sendEnquiryMail } from "@/lib/mail";
+import { contactDetails } from "@/lib/services";
 
 export type EnquiryState = {
   status: "idle" | "success" | "error";
@@ -49,7 +50,7 @@ export async function submitEnquiry(
   } catch {
     return {
       status: "error",
-      message: "The form is fine, but the message did not reach the inbox. Try again in a moment, or write to info@slanfor.com.",
+      message: `The form is fine, but the message did not reach the inbox. Try again in a moment, write to ${contactDetails.email}, or call ${contactDetails.phone}.`,
     };
   }
 

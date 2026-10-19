@@ -1,3 +1,4 @@
+import { contactDetails } from "@/lib/services";
 import { QuoteButton } from "./EnquiryPopup";
 import { SectionHeading } from "./SectionHeading";
 
@@ -11,7 +12,15 @@ export function HomeCta() {
           <p className="mt-4 max-w-md text-base leading-7 text-ink/70">
             A few lines on what is broken, missing, or overdue is enough. We will
             tell you which practice it sits in, and what a first piece of work
-            would look like.
+            would look like. Write to{" "}
+            <a href={`mailto:${contactDetails.email}`} className="hover:text-sky">
+              {contactDetails.email}
+            </a>{" "}
+            or call{" "}
+            <a href={`tel:${contactDetails.phoneTel}`} className="hover:text-sky">
+              {contactDetails.phone}
+            </a>
+            .
           </p>
         </div>
         <QuoteButton />

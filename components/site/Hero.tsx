@@ -34,7 +34,7 @@ export function Hero({
           <Silk speed={3.2} scale={1.15} color="#2563eb" noiseIntensity={1.1} rotation={0.18} />
         </div>
       ) : null}
-      <div className="relative mx-auto grid w-full max-w-[1180px] items-center gap-10 px-5 pt-28 pb-16 md:px-8 md:pt-32 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:gap-12 lg:pb-20">
+      <div className="relative mx-auto grid w-full max-w-[1180px] items-center gap-10 px-5 pt-40 pb-16 md:px-8 md:pt-44 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:gap-12 lg:pb-20">
         <div>
           {eyebrow ? (
             <p className="text-xs font-medium uppercase tracking-[0.22em] text-sky">{eyebrow}</p>
