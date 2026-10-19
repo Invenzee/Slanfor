@@ -1,11 +1,16 @@
+"use client";
+
 import { Check } from "lucide-react";
-import CountUp from "@/components/react-bits/CountUp";
 import { freeWebsite } from "@/lib/services";
 import { GlarePanel } from "./GlarePanel";
+import { HostingAmount, Money } from "./Money";
 import { SectionHeading } from "./SectionHeading";
 import { SiteButton } from "./SiteButton";
+import { useRegion } from "./RegionProvider";
 
 export function OfferStrip() {
+  const { region } = useRegion();
+
   return (
     <section className="bg-inkwell py-20 md:py-28">
       <div className="mx-auto w-full max-w-[1180px] px-5 md:px-8">
@@ -14,8 +19,8 @@ export function OfferStrip() {
             <p className="text-xs font-medium uppercase tracking-[0.22em] text-sky">Offer</p>
             <SectionHeading text="Free website package" className="mt-3" />
             <p className="mt-3 max-w-xl text-base leading-7 text-ink/70">
-              A standard business website is included. Hosting and looking after it is
-              £200 a year. Shops, booking systems, and custom software are quoted on
+              A standard business website is included. Hosting and looking after it is{" "}
+              <HostingAmount /> annually. Shops, booking systems, and custom software are quoted on
               their own.
             </p>
           </div>
@@ -29,7 +34,7 @@ export function OfferStrip() {
             <div className="p-7 md:p-9">
               <p className="text-sm text-ink/65">Professional website development</p>
               <p className="mt-4 font-display text-6xl tracking-tight md:text-7xl">
-                £<CountUp to={0} from={80} duration={1.2} />
+                <Money amount={0} from={80} />
               </p>
             </div>
           </GlarePanel>
@@ -37,7 +42,7 @@ export function OfferStrip() {
             <div className="p-7 md:p-9">
               <p className="text-sm text-ink/65">Hosting and website management</p>
               <p className="mt-4 font-display text-6xl tracking-tight md:text-7xl">
-                £<CountUp to={200} duration={1.2} />
+                <Money amount={region.hosting} />
                 <span className="ml-2 text-2xl text-ink/70">/ annually</span>
               </p>
             </div>

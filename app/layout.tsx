@@ -3,6 +3,7 @@ import { Inter, Unbounded } from "next/font/google";
 import { EnquiryPopupProvider } from "@/components/site/EnquiryPopup";
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
+import { RegionProvider } from "@/components/site/RegionProvider";
 import "./globals.css";
 
 const unbounded = Unbounded({
@@ -30,17 +31,19 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en-GB" className={`${unbounded.variable} ${inter.variable} h-full`}>
       <body className="min-h-full bg-inkwell font-sans text-ink antialiased">
-        <EnquiryPopupProvider>
-          <a
-            href="#content"
-            className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-xl focus:bg-panel focus:px-3 focus:py-2"
-          >
-            Skip to content
-          </a>
-          <Header />
-          <main id="content">{children}</main>
-          <Footer />
-        </EnquiryPopupProvider>
+        <RegionProvider>
+          <EnquiryPopupProvider>
+            <a
+              href="#content"
+              className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-xl focus:bg-panel focus:px-3 focus:py-2"
+            >
+              Skip to content
+            </a>
+            <Header />
+            <main id="content">{children}</main>
+            <Footer />
+          </EnquiryPopupProvider>
+        </RegionProvider>
       </body>
     </html>
   );

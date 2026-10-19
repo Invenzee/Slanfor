@@ -17,7 +17,7 @@ export function LegalPage({
   return (
     <>
       <section className="band-navy">
-        <div className="mx-auto w-full max-w-[860px] px-5 pt-28 pb-14 md:px-8 md:pt-32 md:pb-16">
+        <div className="mx-auto w-full max-w-[860px] px-5 pt-40 pb-14 md:px-8 md:pt-44 md:pb-16">
           <p className="text-xs font-medium uppercase tracking-[0.22em] text-sky">{eyebrow}</p>
           <h1 className={`mt-4 ${headingClass}`}>{title}</h1>
           <p className="mt-5 max-w-2xl text-base leading-7 text-ink/75">{lede}</p>

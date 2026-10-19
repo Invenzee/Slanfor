@@ -12,7 +12,7 @@ export const privacyPolicy = {
     {
       title: "Who we are",
       paragraphs: [
-        "Slanfor is a digital studio. We design and build websites and software, shape brands, produce video and copy, run campaigns, and work outbound sales lists. If you write to us, the controller of that information is Slanfor. You can reach us at info@slanfor.com.",
+        "Slanfor is a digital studio. We design and build websites and software, shape brands, produce video and copy, run campaigns, and work outbound sales lists. If you write to us, the controller of that information is Slanfor. You can reach us at info@slanfor.com or +44 33148312.",
       ],
     },
     {
@@ -50,7 +50,7 @@ export const privacyPolicy = {
     {
       title: "Your rights",
       paragraphs: [
-        "You can ask what we hold about you, ask us to correct it, ask us to delete it, or ask us to stop using it for a follow-up. Write to info@slanfor.com and say what you want done. If you are in the UK and you are not satisfied with our reply, you can contact the Information Commissioner’s Office.",
+        "You can ask what we hold about you, ask us to correct it, ask us to delete it, or ask us to stop using it for a follow-up. Write to info@slanfor.com or call +44 33148312 and say what you want done. If you are in the UK and you are not satisfied with our reply, you can contact the Information Commissioner’s Office.",
       ],
     },
     {
@@ -134,7 +134,7 @@ export const termsAndConditions = {
       title: "Law",
       paragraphs: [
         "These terms are governed by the law of England and Wales. The courts of England and Wales have exclusive jurisdiction, except that we may still seek to recover an unpaid invoice in another court if we need to.",
-        "Questions about these terms: info@slanfor.com.",
+        "Questions about these terms: info@slanfor.com or +44 33148312.",
       ],
     },
   ] satisfies LegalSection[],

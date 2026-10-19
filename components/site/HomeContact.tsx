@@ -15,16 +15,32 @@ export function HomeContact() {
             one. We do not need a polished deck to start a conversation.
           </p>
           <p className="mt-4 max-w-md text-base leading-7 text-ink/65">
-            Write to info@slanfor.com, or use the form. Phone is still to be added.
+            Write to{" "}
+            <a href={`mailto:${contactDetails.email}`} className="hover:text-sky">
+              {contactDetails.email}
+            </a>
+            , call{" "}
+            <a href={`tel:${contactDetails.phoneTel}`} className="hover:text-sky">
+              {contactDetails.phone}
+            </a>
+            , or use the form.
           </p>
           <dl className="mt-8 space-y-5 text-sm">
             <div>
               <dt className="text-xs uppercase tracking-[0.16em] text-ink/45">Email</dt>
-              <dd className="mt-1 text-base">{contactDetails.email}</dd>
+              <dd className="mt-1 text-base">
+                <a href={`mailto:${contactDetails.email}`} className="hover:text-sky">
+                  {contactDetails.email}
+                </a>
+              </dd>
             </div>
             <div>
               <dt className="text-xs uppercase tracking-[0.16em] text-ink/45">Phone</dt>
-              <dd className="mt-1 text-base">{contactDetails.phone}</dd>
+              <dd className="mt-1 text-base">
+                <a href={`tel:${contactDetails.phoneTel}`} className="hover:text-sky">
+                  {contactDetails.phone}
+                </a>
+              </dd>
             </div>
             <div>
               <dt className="text-xs uppercase tracking-[0.16em] text-ink/45">Social</dt>

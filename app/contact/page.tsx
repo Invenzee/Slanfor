@@ -24,11 +24,19 @@ export default function ContactPage() {
             <dl className="mt-6 space-y-6">
               <div>
                 <dt className="text-xs uppercase tracking-[0.16em] text-ink/45">Email</dt>
-                <dd className="mt-1 text-lg">{contactDetails.email}</dd>
+                <dd className="mt-1 text-lg">
+                  <a href={`mailto:${contactDetails.email}`} className="hover:text-sky">
+                    {contactDetails.email}
+                  </a>
+                </dd>
               </div>
               <div>
                 <dt className="text-xs uppercase tracking-[0.16em] text-ink/45">Phone</dt>
-                <dd className="mt-1 text-lg">{contactDetails.phone}</dd>
+                <dd className="mt-1 text-lg">
+                  <a href={`tel:${contactDetails.phoneTel}`} className="hover:text-sky">
+                    {contactDetails.phone}
+                  </a>
+                </dd>
               </div>
               <div>
                 <dt className="text-xs uppercase tracking-[0.16em] text-ink/45">Social</dt>
@@ -36,7 +44,15 @@ export default function ContactPage() {
               </div>
             </dl>
             <p className="mt-8 max-w-sm text-sm leading-6 text-ink/55">
-              Email info@slanfor.com, or use the form. Phone is still to be added.
+              Email{" "}
+              <a href={`mailto:${contactDetails.email}`} className="hover:text-sky">
+                {contactDetails.email}
+              </a>
+              , call{" "}
+              <a href={`tel:${contactDetails.phoneTel}`} className="hover:text-sky">
+                {contactDetails.phone}
+              </a>
+              , or use the form.
             </p>
           </aside>
           <div className="rounded-xl border border-white/10 bg-panel p-5 md:p-6">
