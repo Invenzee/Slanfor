@@ -5,6 +5,7 @@ import { EnquiryPopupProvider } from "@/components/site/EnquiryPopup";
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
 import { RegionProvider } from "@/components/site/RegionProvider";
+import { TawkChat } from "@/components/site/TawkChat";
 import { REGION_COOKIE, REGION_HEADER, defaultRegionId, isRegionId } from "@/lib/regions";
 import "./globals.css";
 
@@ -54,6 +55,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
             <Header />
             <main id="content">{children}</main>
             <Footer />
+            <TawkChat />
           </EnquiryPopupProvider>
         </RegionProvider>
       </body>
