@@ -8,7 +8,6 @@ import { navLinks, pillars } from "@/lib/services";
 import { GlarePanel } from "./GlarePanel";
 import { QuoteButton } from "./EnquiryPopup";
 import { LogoMark } from "./LogoMark";
-import { TopBar } from "./TopBar";
 
 function isCurrent(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
@@ -37,7 +36,6 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      <TopBar />
       <div className="mx-auto flex h-[4.5rem] w-full max-w-[1180px] items-center justify-between px-5 md:px-8">
         <Link href="/" className="flex items-center" aria-label="Slanfor, home">
           <LogoMark size="lg" />

@@ -20,8 +20,15 @@ export type Region = (typeof regions)[number];
 
 export const defaultRegionId: RegionId = "gb";
 
+export const REGION_COOKIE = "slanfor-region";
+export const REGION_HEADER = "x-slanfor-region";
+
 export function isRegionId(value: string): value is RegionId {
   return regions.some((region) => region.id === value);
+}
+
+export function regionFromCountryCode(code?: string | null): RegionId {
+  return code?.trim().toUpperCase() === "US" ? "us" : "gb";
 }
 
 export function getRegion(id: RegionId): Region {
