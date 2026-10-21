@@ -25,7 +25,7 @@ export function PageHero({
           <Silk speed={3.2} scale={1.15} color="#2563eb" noiseIntensity={1.1} rotation={0.18} />
         </div>
       ) : null}
-      <div className="relative mx-auto flex w-full max-w-[860px] flex-col items-center px-5 pt-40 pb-28 text-center md:px-8 md:pt-44">
+      <div className="relative mx-auto flex w-full max-w-[860px] flex-col items-center px-5 py-28 text-center md:px-8">
         <p className="text-xs font-medium uppercase tracking-[0.22em] text-sky">{eyebrow}</p>
         <h1 className={`mt-5 ${headingClass}`}>
           {title}

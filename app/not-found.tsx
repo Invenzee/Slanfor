@@ -4,7 +4,7 @@ import { SiteButton } from "@/components/site/SiteButton";
 export default function NotFound() {
   return (
     <section className="band-navy">
-      <div className="mx-auto flex min-h-[70svh] w-full max-w-[1180px] flex-col justify-center px-5 pt-40 pb-20 md:px-8">
+      <div className="mx-auto flex min-h-[70svh] w-full max-w-[1180px] flex-col justify-center px-5 pt-28 pb-20 md:px-8">
         <p className="text-xs uppercase tracking-[0.22em] text-sky">404</p>
         <h1 className={`mt-4 max-w-xl ${headingClass}`}>
           Page not found

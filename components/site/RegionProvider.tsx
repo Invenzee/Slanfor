@@ -1,14 +1,6 @@
 "use client";
 
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-  type ReactNode,
-} from "react";
+import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import {
   defaultRegionId,
   getRegion,
@@ -17,40 +9,43 @@ import {
   type RegionId,
 } from "@/lib/regions";
 
-const STORAGE_KEY = "slanfor-region";
-
 type RegionContextValue = {
   region: Region;
-  setRegionId: (id: RegionId) => void;
 };
 
 const RegionContext = createContext<RegionContextValue | null>(null);
 
-export function RegionProvider({ children }: { children: ReactNode }) {
-  const [regionId, setRegionIdState] = useState<RegionId>(defaultRegionId);
+export function RegionProvider({
+  children,
+  initialRegionId = defaultRegionId,
+  detected = false,
+}: {
+  children: ReactNode;
+  initialRegionId?: RegionId;
+  detected?: boolean;
+}) {
+  const [regionId, setRegionId] = useState<RegionId>(initialRegionId);
 
   useEffect(() => {
-    try {
-      const saved = window.localStorage.getItem(STORAGE_KEY);
-      if (saved && isRegionId(saved)) setRegionIdState(saved);
-    } catch {
-      /* ignore quota / private mode */
-    }
-  }, []);
+    if (detected) return;
 
-  const setRegionId = useCallback((id: RegionId) => {
-    setRegionIdState(id);
-    try {
-      window.localStorage.setItem(STORAGE_KEY, id);
-    } catch {
-      /* ignore quota / private mode */
-    }
-  }, []);
+    let cancelled = false;
+    fetch("/api/geo")
+      .then((response) => (response.ok ? response.json() : null))
+      .then((data: { region?: string } | null) => {
+        if (cancelled || !data?.region || !isRegionId(data.region)) return;
+        setRegionId(data.region);
+      })
+      .catch(() => {
+        /* keep default */
+      });
 
-  const value = useMemo(
-    () => ({ region: getRegion(regionId), setRegionId }),
-    [regionId, setRegionId],
-  );
+    return () => {
+      cancelled = true;
+    };
+  }, [detected]);
+
+  const value = useMemo(() => ({ region: getRegion(regionId) }), [regionId]);
 
   return <RegionContext.Provider value={value}>{children}</RegionContext.Provider>;
 }
